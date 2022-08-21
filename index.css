@@ -6,6 +6,7 @@ body {
 #app { padding: 14px 100px }
 
 .flex { display: flex }
+.none { display: none }
 
 .align-center { align-items: center }
 
@@ -29,4 +30,10 @@ h1 {
     line-height: 1.8;
     text-align: center;
     color: rgb(20, 20, 20);
+}
+
+.game-box {
+    height: 400px;
+    width: 100%;
+    background-color: #f2f4f7;
 }
