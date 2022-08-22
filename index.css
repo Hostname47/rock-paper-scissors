@@ -3,6 +3,11 @@ body {
     color: rgb(15, 15, 15);
 }
 
+button {
+    background-color: unset;
+    border: unset;
+}
+
 #app { padding: 14px 100px }
 
 .flex { display: flex }
@@ -32,8 +37,64 @@ h1 {
     color: rgb(20, 20, 20);
 }
 
+#opponent-type-selection-box {
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+}
+
+#opponent-type-selection-box {
+    display: flex;
+    gap: 5px;
+    margin-bottom: 8px;
+}
+
+.button-style-1 {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 4px 8px;
+    border: 1px solid #adb9bf;
+    color: rgb(20, 20, 20);
+    fill: rgb(20, 20, 20);
+    border-radius: 3px;
+    cursor: pointer;
+}
+.button-style-1:hover {
+    background-color: #f2f4f7;
+}
+.button-style-1:disabled,
+.button-style-1[disabled] {
+    cursor: default !important;
+    background-color: #f7f7f7 !important;
+}
+
+#opponent-type-selection-box .button .icon {
+    width: 14px;
+    height: 14px;
+}
+
+#opponent-type-selection-box .selected {
+    border-color: rgb(47, 137, 255);
+    box-shadow: 0px 0px 0px 3px rgba(131, 184, 255, 0.3);
+}
+
 .game-box {
+    padding: 40px;
     height: 400px;
     width: 100%;
+    box-sizing: border-box;
     background-color: #f2f4f7;
+}
+
+.selection-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.selection-container .selection-item {
+    width: 60px;
+    height: 60px;
 }
