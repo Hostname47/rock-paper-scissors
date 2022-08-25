@@ -25,6 +25,7 @@ button {
 .flex-column { flex-direction: column }
 
 h1 {
+    margin: 8px;
     text-align: center;
     letter-spacing: 1.8px;
     color: rgb(0, 132, 255);
@@ -186,6 +187,11 @@ h1 {
     background-color: #adb9bf;
     animation: glimmer 2s linear infinite;
     -webkit-animation: glimmer 2s linear infinite;
+}
+
+.selected-choice-container .glimmer .loading {
+    font-size: 13px;
+    color: #1f282c;
 }
 
 @keyframes glimmer {
