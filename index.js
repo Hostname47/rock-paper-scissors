@@ -10,6 +10,14 @@ const rules = {
   'scissor-rock': -1,
   'scissor-paper': 1,
 }
+const parties = {
+  me: 1,
+  opponent: 1
+}
+const score = {
+  me: 0,
+  opponent: 0
+}
 
 function setChoiceIconToChoiceBox(box, choice, direction) {
   let icon = document.querySelector(`.${choice}-${direction}`).cloneNode(true)
@@ -52,10 +60,50 @@ function computerEvaluate(choice) {
    *    1 : you won
    */
   const result = evaluate(choice, opponentChoice);
+  
+  // We increment game parties if one player win
+  if(result !== 0) {
+    console.log(result)
+    tickParty(result);
+  }
 
   // Here we need to set a loading and remove it when release the lock to allow the user to start a new game
-  
+
   setTimeout(() => {
     choiceLock = true
-  }, 2800)
+  }, 0)
+}
+
+function tickParty(result) {
+  if(result === 1) {
+    let box = document.querySelector('.game-parties-container .my-parties')
+    box.querySelector(`.party:nth-child(${parties.me})`).classList.add('win')
+    parties.me++;
+  } else {
+    let box = document.querySelector('.game-parties-container .opponent-parties')
+    box.querySelector(`.party:nth-child(${parties.opponent})`).classList.add('win')
+    parties.opponent++;
+  }
+
+  if(parties.me === 4 || parties.opponent === 4) {
+    if(parties.me === 4) {
+      document.querySelector('.players-score-box .your-score').textContent = ++score.me
+    } else if(parties.opponent === 4) {
+      document.querySelector('.players-score-box .opponent-score').textContent = ++score.opponent
+    }
+
+    const resultText = document.querySelector('.game-result-text')
+    // Remove last color of result text (we'll set its color in switch statement below)
+    resultText.classList.remove(Array.from(resultText.classList)[resultText.classList.length-1])
+
+    if(result === 1) {
+      resultText.textContent = 'You win'
+      resultText.classList.add('green')
+    } else {
+      resultText.textContent = 'opponent win'
+      resultText.classList.add('red')
+    }    
+
+    document.querySelectorAll(`.game-parties-container .party`).forEach(party => party.classList.remove('win'))
+  }
 }

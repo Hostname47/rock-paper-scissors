@@ -12,7 +12,7 @@ button {
 #app { padding: 14px 100px }
 
 .flex { display: flex }
-.none { display: none }
+.none { display: none !important }
 
 .align-center { align-items: center }
 
@@ -192,6 +192,56 @@ h1 {
 .selected-choice-container .glimmer .loading {
     font-size: 13px;
     color: #1f282c;
+}
+
+.game-result-text {
+    margin-top: 8px;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.game-parties-container {
+    margin-top: 16px;
+    display: flex;
+    justify-content: center;
+    gap: 120px;
+}
+
+.parties-box {
+    display: flex;
+    gap: 12px;
+}
+
+.parties-box .party {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: 2px solid #1f282c;
+}
+
+.parties-box .party.win {
+    background-color: #1f282c;
+}
+
+.game-menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 36px 0 16px 0;
+}
+
+.gray {
+    color: #1f282c;
+}
+
+.green {
+    color: rgb(61 173 89);
+}
+
+.red {
+    color: rgb(255, 77, 77);
 }
 
 @keyframes glimmer {
