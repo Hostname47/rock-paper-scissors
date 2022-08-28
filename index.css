@@ -24,6 +24,11 @@ button {
 
 .flex-column { flex-direction: column }
 
+.size14 {
+    width: 14px;
+    height: 14px;
+}
+
 h1 {
     margin: 8px;
     text-align: center;
@@ -71,6 +76,24 @@ h1 {
     background-color: #f7f7f7 !important;
 }
 
+.button-style-2 {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 12px;
+    font-family: Helvetica, sans-serif;
+    font-size: 13px;
+    font-weight: bold;
+    border: 1px solid #adb9bf;
+    color: rgb(20, 20, 20);
+    fill: rgb(20, 20, 20);
+    border-radius: 3px;
+    cursor: pointer;
+}
+.button-style-2:hover {
+    background-color: #e8ebf0;
+}
+
 #opponent-type-selection-box .button .icon {
     width: 14px;
     height: 14px;
@@ -114,8 +137,8 @@ h1 {
 }
 
 .player-score-box .icon {
-    width: 26px;
-    height: 26px;
+    width: 24px;
+    height: 24px;
     fill: #2179ff;
 }
 
@@ -142,10 +165,10 @@ h1 {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 142px;
-    height: 142px;
-    border-radius: 8px;
-    border: 2px solid #49606f;
+    width: 132px;
+    height: 132px;
+    border-radius: 6px;
+    border: 1px solid #49606f;
     box-shadow: 0px 0px 0px 6px #43708e30;
     overflow: hidden;
 }
@@ -189,7 +212,7 @@ h1 {
     -webkit-animation: glimmer 2s linear infinite;
 }
 
-.selected-choice-container .glimmer .loading {
+.selected-choice-container .glimmer .loading-text {
     font-size: 13px;
     color: #1f282c;
 }
@@ -214,8 +237,8 @@ h1 {
 }
 
 .parties-box .party {
-    width: 12px;
-    height: 12px;
+    width: 8px;
+    height: 8px;
     border-radius: 50%;
     border: 2px solid #1f282c;
 }
@@ -229,7 +252,8 @@ h1 {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    padding: 36px 0 16px 0;
+    padding: 26px 0 16px 0;
+    gap: 8px;
 }
 
 .gray {

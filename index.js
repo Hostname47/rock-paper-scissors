@@ -63,15 +63,14 @@ function computerEvaluate(choice) {
   
   // We increment game parties if one player win
   if(result !== 0) {
-    console.log(result)
     tickParty(result);
   }
 
-  // Here we need to set a loading and remove it when release the lock to allow the user to start a new game
-
-  setTimeout(() => {
-    choiceLock = true
-  }, 0)
+  /**
+   * We release the lock once we evaluate the opponent choice and show everything in the UI
+   * then the user can pick other choice to maintain consistency
+   */
+  choiceLock = true
 }
 
 function tickParty(result) {
@@ -104,6 +103,41 @@ function tickParty(result) {
       resultText.classList.add('red')
     }    
 
-    document.querySelectorAll(`.game-parties-container .party`).forEach(party => party.classList.remove('win'))
+    // Display menu to allow user to click on 'play again' button
+    document.querySelector('.game-menu').classList.remove('none')
+    // Hide selection buttons because one player win
+    document.querySelector('.selection-box').classList.add('none')
   }
 }
+
+document.querySelector('.play-button').addEventListener('click', e => {
+  e.currentTarget.querySelector('.label').textContent = 'Play again'
+  // Rest parties to default values
+  parties.me = 1
+  parties.opponent = 1
+  
+  // Remove all previous win parties UI
+  document.querySelectorAll(`.game-parties-container .party`).forEach(party => party.classList.remove('win'))
+
+  // Reset the result text and remove the old color and add the default one (gray)
+  const resultText = document.querySelector('.game-result-text')
+  resultText.textContent = '--'
+  resultText.classList.remove(Array.from(resultText.classList)[resultText.classList.length-1])
+  resultText.classList.add('gray')
+
+  // remove old choices icons and replace choice box with glimmers and loading texts
+  const myChoice = document.querySelector('#my-choice-box')
+  const opponentChoice = document.querySelector('#opponent-choice-box')
+
+  myChoice.innerHTML = 
+    `<div class="full-center glimmer">
+      <span class="loading-text">take your pick</span>
+    </div>`;
+  opponentChoice.innerHTML = 
+    `<div class="full-center glimmer">
+      <span class="loading-text">your opponent..</span>
+    </div>`;
+
+  document.querySelector('.game-menu').classList.add('none')
+  document.querySelector('.selection-box').classList.remove('none')
+});

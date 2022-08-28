@@ -79,20 +79,20 @@
                     <div class="selected-choice-container" id="my-choice-box">
                         <!-- dynamically appended choice should have 'selected-choice class' -->
                         <div class="full-center glimmer">
-                            <span class="loading">take your pick</span>
+                            <span class="loading-text">you</span>
                         </div>
                     </div>
                     <!-- opponent choice -->
                     <div class="selected-choice-container" id="opponent-choice-box">
                         <!-- dynamically appended choice should have 'selected-choice class' -->
                         <div class="full-center glimmer">
-                            <span class="loading">opponent waiting..</span>
+                            <span class="loading-text">your opponent</span>
                         </div>
                     </div>
                 </div>
 
                 <div>
-                    <div class="selection-box">
+                    <div class="selection-box none">
                         <span >take your pick</span>
                         <div class="full-center selection-items-container">
                             <button class="selection-item" data-type="rock">
@@ -106,8 +106,15 @@
                             </button>
                         </div>
                     </div>
-                    <div class="game-menu none">
-                        <button class="play-button">Play</button>
+                    <div class="game-menu">
+                        <button class="button-style-2 play-button">
+                            <svg class="size14" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 260"><path d="M63.31,129.84c0-22.38,0-44.75,0-67.13,0-4.94,1-9.17,5.59-11.77s8.77-1.43,13,1.2q53.79,33.71,107.64,67.33c9.79,6.13,9.67,15-.28,21.24q-53.58,33.56-107.21,67c-4.16,2.61-8.35,3.94-13,1.4s-5.76-6.72-5.74-11.69C63.36,174.93,63.31,152.38,63.31,129.84Z"/></svg>
+                            <span class="label">Play</span>
+                        </button>
+                        <button class="button-style-2 play-button">
+                            <svg class="size14" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 260"><path d="M103,67.13c0-3.4-.21-6.15,0-8.86.36-3.9,3.06-5.55,6.43-3.65Q131.6,67.1,153.48,80c3.57,2.11,3.44,5.51-.23,7.66q-21.67,12.72-43.56,25.1c-3.64,2.06-6.28.44-6.64-3.79-.22-2.69,0-5.41,0-9.14-10.85.49-21.25,0-31.3,1.64-11.66,1.91-20.08,13.31-20.49,25.06-.44,12.79,6.8,23.58,18.56,27.66,8.23,2.85,8.85,3.72,8.86,12.52,0,4.36.12,8.72-.08,13.07-.27,5.82-4.42,9-10.14,8.14-29-4.58-50.5-30.7-50.25-61,.24-29.4,22.52-55,51.35-58.95a101.22,101.22,0,0,1,11.55-.78C88.14,67.05,95.21,67.13,103,67.13ZM180.28,189a62.11,62.11,0,0,0,28.8-7.12c22.48-11.82,35.61-37.6,31.67-62.32C236.54,93.13,217,72.8,191.47,68.27c-6.42-1.14-10.42,2-10.65,8.45-.15,4,0,8.06,0,12.09,0,9.45.34,9.92,9.31,13.16,11.6,4.19,18.69,15.16,18.08,28-.55,11.68-9.19,23.12-20.86,24.72-9.92,1.36-20.17.29-30.91.29,0-2.36.18-5.08,0-7.76-.34-4.24-3-5.92-6.59-3.88q-22.08,12.51-43.94,25.38c-3.35,2-3.33,5.36,0,7.35q21.87,12.89,43.95,25.37c3.55,2,6.25.17,6.56-4.06.19-2.56,0-5.14,0-8.39C164.85,189,172.56,189,180.28,189Z"/></svg>
+                            <span class="label">Restore score</span>
+                        </button>
                     </div>
                 </div>
             </section>
