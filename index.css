@@ -24,6 +24,15 @@ button {
 
 .flex-column { flex-direction: column }
 
+.unselectable {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+     -khtml-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+}
+
 .size14 {
     width: 14px;
     height: 14px;

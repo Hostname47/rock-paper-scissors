@@ -141,3 +141,11 @@ document.querySelector('.play-button').addEventListener('click', e => {
   document.querySelector('.game-menu').classList.add('none')
   document.querySelector('.selection-box').classList.remove('none')
 });
+
+document.querySelector('.restore-score-button').addEventListener('click', function() {
+  score.me = 0
+  score.opponent = 0
+
+  document.querySelectorAll('.player-score-box .score').forEach(function(score) { score.textContent = '0' })
+  document.querySelector('.play-button').click()
+});
